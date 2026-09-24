@@ -1,0 +1,11 @@
+﻿KundenId;Vorname;Nachname;Geburtsdatum;E-Mail;Telefonnummer;Adresse;PLZ;Anzahl Ausborgungen;Zahlungsstatus
+1;Anna;Huber;1995-06-21;anna.huber@example.at;+43 664 1234567;Mariahilfer Straße 45;1060;12;bezahlt
+2;Lukas;Gruber;1988-11-03;lukas.gruber@example.at;+43 676 2345678;Hauptplatz 7;8010;3;bezahlt
+3;Sophie;Wagner;2001-02-14;sophie.wagner@example.at;+43 650 3456789;Neubaugasse 21;1070;0;offen
+4;Maximilian;Bauer;1979-09-09;max.bauer@example.at;+43 699 4567890;Landstraße 12;4020;7;überfällig
+5;Laura;Pichler;1997-05-08;laura.pichler@example.at;+43 664 5678901;Wiener Straße 150;3100;1;bezahlt
+6;David;Steiner;1992-04-27;david.steiner@example.at;+43 676 6789012;Getreidegasse 3;5020;25;bezahlt
+7;Julia;Moser;1999-12-01;julia.moser@example.at;+43 660 7890123;Favoritenstraße 88;1100;5;offen
+8;Tobias;Mayer;2000-08-15;tobias.mayer@example.at;+43 664 8901234;Herrengasse 9;7000;2;bezahlt
+9;Hannah;Hofer;1985-07-19;hannah.hofer@example.at;+43 699 9012345;Maria-Theresien-Straße 20;6020;9;überfällig
+10;Felix;Leitner;2003-03-30;felix.leitner@example.at;+43 650 0123456;Alter Platz 1;9020;15;bezahlt
