@@ -1,0 +1,1843 @@
+<!doctype html>
+
+<html class="dark" lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SpritShare - Spritkostentracker</title>
+    <!-- Material Symbols Outlined -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Design System Tailwind Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#0f131b",
+              "error-container": "#93000a",
+              "on-primary-container": "#00422b",
+              "surface-tint": "#4edea3",
+              error: "#ffb4ab",
+              "inverse-primary": "#006c49",
+              "secondary-fixed-dim": "#89ceff",
+              "on-secondary": "#00344d",
+              "on-secondary-fixed": "#001e2f",
+              "on-primary": "#003824",
+              "secondary-container": "#00a2e6",
+              "on-error": "#690005",
+              "outline-variant": "#3c4a42",
+              "secondary-fixed": "#c9e6ff",
+              "surface-bright": "#353941",
+              "on-surface-variant": "#bbcabf",
+              background: "#0f131b",
+              secondary: "#89ceff",
+              outline: "#86948a",
+              "surface-container-lowest": "#0a0e15",
+              "surface-container-highest": "#31353d",
+              "surface-container-high": "#262a32",
+              surface: "#0f131b",
+              "on-primary-fixed": "#002113",
+              "on-background": "#dfe2ed",
+              "primary-fixed-dim": "#4edea3",
+              "tertiary-fixed": "#89f5e7",
+              "inverse-on-surface": "#2d3038",
+              tertiary: "#6bd8cb",
+              "primary-container": "#10b981",
+              "surface-container": "#1c2027",
+              "primary-fixed": "#6ffbbe",
+              "on-secondary-fixed-variant": "#004c6e",
+              "on-tertiary-container": "#00413b",
+              "on-surface": "#dfe2ed",
+              "on-tertiary-fixed-variant": "#005049",
+              "surface-variant": "#31353d",
+              "tertiary-fixed-dim": "#6bd8cb",
+              "on-secondary-container": "#00344e",
+              "on-tertiary": "#003732",
+              "on-tertiary-fixed": "#00201d",
+              "inverse-surface": "#dfe2ed",
+              "surface-container-low": "#181c23",
+              primary: "#4edea3",
+              "tertiary-container": "#42b4a7",
+              "on-error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#005236",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              margin: "1.5rem",
+              gutter: "1.25rem",
+              "space-sm": "0.5rem",
+              "space-lg": "1.5rem",
+              "space-xs": "0.25rem",
+              "space-md": "1rem",
+              "space-xl": "2rem",
+            },
+            fontFamily: {
+              "headline-lg": ["Geist", "sans-serif"],
+              "body-md": ["Inter", "sans-serif"],
+              "label-md": ["Geist", "sans-serif"],
+              "numeric-table": ["Geist", "monospace"],
+              "headline-xl": ["Geist", "sans-serif"],
+              "display-lg": ["Geist", "sans-serif"],
+              "headline-sm": ["Geist", "sans-serif"],
+              "body-sm": ["Inter", "sans-serif"],
+              "headline-md": ["Geist", "sans-serif"],
+              "label-sm": ["Geist", "sans-serif"],
+              "body-lg": ["Inter", "sans-serif"],
+              "numeric-kpi": ["Geist", "sans-serif"],
+            },
+            fontSize: {
+              "headline-lg": [
+                "1.5rem",
+                {
+                  lineHeight: "2rem",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": [
+                "0.875rem",
+                { lineHeight: "1.25rem", fontWeight: "400" },
+              ],
+              "label-md": [
+                "0.8125rem",
+                {
+                  lineHeight: "1rem",
+                  letterSpacing: "0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "numeric-table": [
+                "0.875rem",
+                {
+                  lineHeight: "1.25rem",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-xl": [
+                "2rem",
+                {
+                  lineHeight: "2.5rem",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-lg": [
+                "3rem",
+                {
+                  lineHeight: "3.5rem",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "1.125rem",
+                {
+                  lineHeight: "1.5rem",
+                  letterSpacing: "0em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-sm": [
+                "0.75rem",
+                { lineHeight: "1.125rem", fontWeight: "400" },
+              ],
+              "headline-md": [
+                "1.25rem",
+                {
+                  lineHeight: "1.75rem",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-sm": [
+                "0.6875rem",
+                {
+                  lineHeight: "0.875rem",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": ["1rem", { lineHeight: "1.5rem", fontWeight: "400" }],
+              "numeric-kpi": [
+                "1.75rem",
+                {
+                  lineHeight: "2rem",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- SHARED TOP NAVBAR (Implements JSON Anchor & Semantic Shell) -->
+    <header
+      class="bg-surface-container-low dark:bg-surface-container-low border-b border-outline-variant/30 docked full-width top-0 sticky z-40"
+    >
+      <div
+        class="flex justify-between items-center w-full px-6 h-16 max-w-full"
+      >
+        <!-- Brand & Product Title with Badge -->
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">
+            <span
+              class="material-symbols-outlined text-primary text-2xl"
+              data-icon="local_gas_station"
+              >local_gas_station</span
+            >
+            <span
+              class="text-headline-md font-headline-md font-bold text-primary dark:text-primary tracking-tight"
+              >SpritShare</span
+            >
+          </div>
+          <span
+            class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container-highest border border-outline-variant text-primary font-mono uppercase tracking-wider"
+            >v2.4 Pro</span
+          >
+          <span
+            class="hidden xl:inline-block text-body-sm font-body-sm text-on-surface-variant/80 border-l border-outline-variant/40 pl-3"
+          >
+            Spritkostentracker für Fahrgemeinschaften
+          </span>
+        </div>
+        <!-- Navigation Links (Active item: Dashboard) -->
+        <nav
+          class="hidden md:flex items-center space-x-6 text-label-md font-label-md"
+        >
+          <a
+            class="text-primary dark:text-primary font-semibold border-b-2 border-primary pb-1 active:scale-[0.98] transition-all duration-150"
+            href="#"
+            >Dashboard</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors pb-1"
+            href="#"
+            >Fahrtenbuch</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors pb-1"
+            href="#"
+            >Statistiken</a
+          >
+          <a
+            class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors pb-1"
+            href="#"
+            >Fahrzeuge</a
+          >
+        </nav>
+        <!-- Trailing Controls: Currency Selector & Action Cluster -->
+        <div class="flex items-center space-x-3">
+          <!-- Parameter Currency Switcher -->
+          <div
+            class="flex items-center bg-surface-container-lowest border border-outline-variant/50 rounded p-0.5"
+          >
+            <button
+              class="curr-btn px-2.5 py-1 text-label-sm font-label-sm rounded bg-surface-container-high text-primary border border-outline-variant font-medium"
+              id="curr-EUR"
+              onclick="setCurrency('EUR')"
+            >
+              EUR (€)
+            </button>
+            <button
+              class="curr-btn px-2.5 py-1 text-label-sm font-label-sm rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+              id="curr-CHF"
+              onclick="setCurrency('CHF')"
+            >
+              CHF (Fr.)
+            </button>
+            <button
+              class="curr-btn px-2.5 py-1 text-label-sm font-label-sm rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+              id="curr-USD"
+              onclick="setCurrency('USD')"
+            >
+              USD ($)
+            </button>
+            <button
+              class="curr-btn px-2.5 py-1 text-label-sm font-label-sm rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+              id="curr-GBP"
+              onclick="setCurrency('GBP')"
+            >
+              GBP (£)
+            </button>
+          </div>
+          <!-- Utility Action Icons -->
+          <button
+            class="p-2 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"
+            title="Einstellungen"
+          >
+            <span
+              class="material-symbols-outlined text-xl align-middle"
+              data-icon="tune"
+              >tune</span
+            >
+          </button>
+          <button
+            class="p-2 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors relative"
+            title="Benachrichtigungen"
+          >
+            <span
+              class="material-symbols-outlined text-xl align-middle"
+              data-icon="notifications"
+              >notifications</span
+            >
+            <span
+              class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface-dim"
+            ></span>
+          </button>
+          <div class="h-5 w-[1px] bg-outline-variant/40 mx-1"></div>
+          <!-- Trailing Primary Action & Driver Avatar -->
+          <button
+            class="hidden sm:inline-flex items-center space-x-1.5 bg-primary-container hover:bg-inverse-primary text-on-primary-container px-3.5 py-1.5 rounded text-label-md font-label-md font-semibold transition-colors active:scale-[0.98]"
+            onclick="focusNewTripForm()"
+          >
+            <span
+              class="material-symbols-outlined text-lg"
+              data-icon="add_circle"
+              >add_circle</span
+            >
+            <span>Neue Fahrt</span>
+          </button>
+          <div
+            class="flex items-center pl-2 space-x-2 border-l border-outline-variant/40"
+          >
+            <div
+              class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary font-headline-sm text-sm"
+            >
+              FP
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- KPI SUMMARY STRIP (Top Command Tier Metrics) -->
+    <section
+      class="bg-surface-container-lowest border-b border-outline-variant/20 px-6 py-4"
+    >
+      <div
+        class="max-w-[1720px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+      >
+        <!-- KPI 1 -->
+        <div
+          class="bg-surface-container-low border border-outline-variant/40 rounded p-3.5 flex items-center justify-between"
+        >
+          <div>
+            <span
+              class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider block"
+              >Gesamte Fahrstrecke</span
+            >
+            <div class="flex items-baseline space-x-1.5 mt-0.5">
+              <span class="text-numeric-kpi font-numeric-kpi text-on-surface"
+                >2.840</span
+              >
+              <span class="text-body-sm font-body-sm text-on-surface-variant"
+                >km</span
+              >
+            </div>
+            <span
+              class="text-body-sm font-body-sm text-primary flex items-center space-x-1 mt-1"
+            >
+              <span
+                class="material-symbols-outlined text-xs"
+                data-icon="trending_up"
+                >trending_up</span
+              >
+              <span>+14.2% ggü. Vormonat</span>
+            </span>
+          </div>
+          <div
+            class="p-2.5 rounded bg-surface-container border border-outline-variant/30 text-secondary"
+          >
+            <span class="material-symbols-outlined text-2xl" data-icon="route"
+              >route</span
+            >
+          </div>
+        </div>
+        <!-- KPI 2 -->
+        <div
+          class="bg-surface-container-low border border-outline-variant/40 rounded p-3.5 flex items-center justify-between"
+        >
+          <div>
+            <span
+              class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider block"
+              >Gesamte Spritkosten</span
+            >
+            <div class="flex items-baseline space-x-1 mt-0.5">
+              <span
+                class="text-numeric-kpi font-numeric-kpi text-on-surface"
+                id="kpi-total-cost"
+                >384,50</span
+              >
+              <span
+                class="currency-symbol text-body-sm font-body-sm text-on-surface-variant"
+                >€</span
+              >
+            </div>
+            <span
+              class="text-body-sm font-body-sm text-on-surface-variant mt-1 block"
+            >
+              Ø 1.76 <span class="currency-symbol">€</span>/L Realpreis
+            </span>
+          </div>
+          <div
+            class="p-2.5 rounded bg-surface-container border border-outline-variant/30 text-primary"
+          >
+            <span
+              class="material-symbols-outlined text-2xl"
+              data-icon="payments"
+              >payments</span
+            >
+          </div>
+        </div>
+        <!-- KPI 3 -->
+        <div
+          class="bg-surface-container-low border border-outline-variant/40 rounded p-3.5 flex items-center justify-between"
+        >
+          <div>
+            <span
+              class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider block"
+              >Durchschn. Ersparnis p.P.</span
+            >
+            <div class="flex items-baseline space-x-1 mt-0.5">
+              <span
+                class="text-numeric-kpi font-numeric-kpi text-primary"
+                id="kpi-savings"
+                >48,20</span
+              >
+              <span
+                class="currency-symbol text-body-sm font-body-sm text-primary"
+                >€</span
+              >
+            </div>
+            <span
+              class="text-body-sm font-body-sm text-tertiary flex items-center space-x-1 mt-1"
+            >
+              <span class="material-symbols-outlined text-xs" data-icon="eco"
+                >eco</span
+              >
+              <span>~148 kg CO₂ geteilt</span>
+            </span>
+          </div>
+          <div
+            class="p-2.5 rounded bg-surface-container border border-outline-variant/30 text-primary-fixed"
+          >
+            <span class="material-symbols-outlined text-2xl" data-icon="savings"
+              >savings</span
+            >
+          </div>
+        </div>
+        <!-- KPI 4 -->
+        <div
+          class="bg-surface-container-low border border-outline-variant/40 rounded p-3.5 flex items-center justify-between"
+        >
+          <div>
+            <span
+              class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider block"
+              >Aktive Fahrten erfasst</span
+            >
+            <div class="flex items-baseline space-x-1 mt-0.5">
+              <span class="text-numeric-kpi font-numeric-kpi text-on-surface"
+                >14</span
+              >
+              <span class="text-body-sm font-body-sm text-on-surface-variant"
+                >Fahrten</span
+              >
+            </div>
+            <span
+              class="text-body-sm font-body-sm text-on-surface-variant mt-1 block"
+            >
+              4 Mitfahrer im aktiven Pool
+            </span>
+          </div>
+          <div
+            class="p-2.5 rounded bg-surface-container border border-outline-variant/30 text-secondary-fixed"
+          >
+            <span class="material-symbols-outlined text-2xl" data-icon="group"
+              >group</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- MAIN PRODUCTIVITY CANVAS: Asymmetrical Split Grid -->
+    <main class="flex-1 px-6 py-6 max-w-[1720px] mx-auto w-full">
+      <!-- System Confirmation Banner (Requirement 5 Preview) -->
+      <div
+        class="hidden mb-6 bg-error-container/20 border border-error/40 rounded p-4 flex items-center justify-between transition-all"
+        id="delete-alert-banner"
+      >
+        <div class="flex items-center space-x-3">
+          <span
+            class="material-symbols-outlined text-error text-2xl"
+            data-icon="warning"
+            >warning</span
+          >
+          <div>
+            <p class="text-body-md font-body-md text-on-surface font-semibold">
+              Fahrt #102 wirklich löschen?
+            </p>
+            <p class="text-body-sm font-body-sm text-error/90">
+              Strecke: 180 km (Frankfurt → Mannheim) • Betrag: 23,40 €. Dieser
+              Schritt kann nicht rückgängig gemacht werden.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <button
+            class="px-3 py-1.5 rounded text-label-md font-label-md text-on-surface hover:bg-surface-container-high transition-colors"
+            onclick="dismissDeleteBanner()"
+          >
+            Abbrechen
+          </button>
+          <button
+            class="px-3 py-1.5 rounded text-label-md font-label-md bg-error text-on-error font-semibold hover:bg-error/80 transition-colors"
+            onclick="confirmTripDeletion(102)"
+          >
+            Ja, Fahrt löschen
+          </button>
+        </div>
+      </div>
+      <!-- 2-COLUMN DESKTOP SPLIT -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- LEFT COLUMN: Trip Logging & Live Cost Calculation Engine (38% Desktop Width / 5 Cols) -->
+        <div class="lg:col-span-5 space-y-5">
+          <div
+            class="bg-surface-container-low border border-outline-variant/40 rounded p-5"
+          >
+            <div
+              class="flex items-center justify-between border-b border-outline-variant/30 pb-3 mb-4"
+            >
+              <div class="flex items-center space-x-2">
+                <span
+                  class="material-symbols-outlined text-primary text-xl"
+                  data-icon="calculate"
+                  >calculate</span
+                >
+                <h2
+                  class="text-headline-sm font-headline-sm text-on-surface font-semibold"
+                >
+                  Neue Fahrt erfassen
+                </h2>
+              </div>
+              <span
+                class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded border border-outline-variant/30"
+                >Direktformular</span
+              >
+            </div>
+            <!-- Form Fields Container -->
+            <form
+              class="space-y-4"
+              id="trip-calculator-form"
+              onsubmit="
+                event.preventDefault();
+                saveNewTrip();
+              "
+            >
+              <!-- Datum -->
+              <div>
+                <label
+                  class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+                  for="input-date"
+                  >Datum</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary transition-colors"
+                    id="input-date"
+                    type="date"
+                    value="2024-10-24"
+                  />
+                  <span
+                    class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-lg"
+                    data-icon="calendar_today"
+                    >calendar_today</span
+                  >
+                </div>
+              </div>
+              <!-- Gefahrene Kilometer & Verbrauch Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Kilometer -->
+                <div>
+                  <label
+                    class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+                    for="input-km"
+                    >Gefahrene Strecke</label
+                  >
+                  <div class="relative">
+                    <input
+                      class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 pr-12 text-body-md font-body-md font-numeric-table text-on-surface focus:outline-none focus:border-primary transition-colors"
+                      id="input-km"
+                      min="0"
+                      oninput="runLiveCalculation()"
+                      step="0.1"
+                      type="number"
+                      value="185"
+                    />
+                    <span
+                      class="absolute right-3 top-2.5 text-label-sm font-label-sm text-outline"
+                      >km</span
+                    >
+                  </div>
+                </div>
+                <!-- Verbrauch -->
+                <div>
+                  <label
+                    class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+                    for="input-consumption"
+                    >Verbrauch / 100km</label
+                  >
+                  <div class="relative">
+                    <input
+                      class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 pr-16 text-body-md font-body-md font-numeric-table text-on-surface focus:outline-none focus:border-primary transition-colors"
+                      id="input-consumption"
+                      min="0"
+                      oninput="runLiveCalculation()"
+                      step="0.1"
+                      type="number"
+                      value="6.5"
+                    />
+                    <span
+                      class="absolute right-3 top-2.5 text-label-sm font-label-sm text-outline"
+                      >L/100km</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Spritpreis & Modus -->
+              <div>
+                <label
+                  class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+                  for="input-price"
+                  >Aktueller Kraftstoffpreis</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 pr-14 text-body-md font-body-md font-numeric-table text-on-surface focus:outline-none focus:border-primary transition-colors"
+                    id="input-price"
+                    min="0"
+                    oninput="runLiveCalculation()"
+                    step="0.01"
+                    type="number"
+                    value="1.75"
+                  />
+                  <span
+                    class="absolute right-3 top-2.5 text-label-sm font-label-sm text-outline"
+                    id="price-unit-label"
+                    >€/L</span
+                  >
+                </div>
+              </div>
+              <!-- Mitfahrer Zählung & Inkl./Exkl. Umschalter -->
+              <div class="pt-1">
+                <div class="flex items-center justify-between mb-1">
+                  <label
+                    class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider"
+                    >Anzahl Beteiligte / Mitfahrer</label
+                  >
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="text-label-sm font-label-sm text-on-surface-variant"
+                      >Fahrer einrechnen?</span
+                    >
+                    <input
+                      checked=""
+                      class="rounded bg-surface-container border-outline-variant text-primary focus:ring-0 w-4 h-4"
+                      id="check-include-driver"
+                      onchange="runLiveCalculation()"
+                      type="checkbox"
+                    />
+                  </div>
+                </div>
+                <!-- Stepper Control -->
+                <div
+                  class="flex items-center bg-surface-container border border-outline-variant/60 rounded p-1"
+                >
+                  <button
+                    class="w-9 h-9 flex items-center justify-center rounded bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors"
+                    onclick="adjustPassengers(-1)"
+                    type="button"
+                  >
+                    <span
+                      class="material-symbols-outlined text-lg"
+                      data-icon="remove"
+                      >remove</span
+                    >
+                  </button>
+                  <input
+                    class="w-full bg-transparent border-0 text-center font-numeric-table text-headline-sm font-headline-sm text-on-surface focus:ring-0 focus:outline-none"
+                    id="input-passengers"
+                    max="9"
+                    min="1"
+                    oninput="runLiveCalculation()"
+                    type="number"
+                    value="3"
+                  />
+                  <button
+                    class="w-9 h-9 flex items-center justify-center rounded bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors"
+                    onclick="adjustPassengers(1)"
+                    type="button"
+                  >
+                    <span
+                      class="material-symbols-outlined text-lg"
+                      data-icon="add"
+                      >add</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- Namen der Mitfahrer (Namen Chips) -->
+              <div>
+                <label
+                  class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+                  for="input-passenger-names"
+                  >Namen der Mitfahrer (Kommagetrennt)</label
+                >
+                <input
+                  class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary transition-colors"
+                  id="input-passenger-names"
+                  type="text"
+                  value="Max Mustermann, Sarah Klein, Jonas Berg"
+                />
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span
+                    class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary flex items-center space-x-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="person"
+                      >person</span
+                    >
+                    <span>Max</span>
+                  </span>
+                  <span
+                    class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary flex items-center space-x-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="person"
+                      >person</span
+                    >
+                    <span>Sarah</span>
+                  </span>
+                  <span
+                    class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary flex items-center space-x-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="person"
+                      >person</span
+                    >
+                    <span>Jonas</span>
+                  </span>
+                  <span
+                    class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant flex items-center space-x-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="directions_car"
+                      >directions_car</span
+                    >
+                    <span>Du (Fahrer)</span>
+                  </span>
+                </div>
+              </div>
+              <!-- Validation Box / Regelhinweis -->
+              <div
+                class="bg-surface-container/60 border border-outline-variant/40 rounded p-3 text-body-sm font-body-sm text-on-surface-variant flex items-start space-x-2"
+                id="validation-box"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary text-base mt-0.5"
+                  data-icon="info"
+                  >info</span
+                >
+                <div>
+                  <span class="font-medium text-on-surface"
+                    >Validierungsregel:</span
+                  >
+                  <span
+                    >Negative Werte und ungültige Zeichen sind gesperrt. Formel:
+                    (KM × Verbrauch ÷ 100) × Spritpreis.</span
+                  >
+                </div>
+              </div>
+              <!-- Error message container (Dynamic inline) -->
+              <div
+                class="hidden bg-error-container/30 border border-error/40 rounded p-2.5 text-body-sm font-body-sm text-error flex items-center space-x-2"
+                id="form-error-msg"
+              >
+                <span
+                  class="material-symbols-outlined text-base"
+                  data-icon="error"
+                  >error</span
+                >
+                <span id="error-text"
+                  >Bitte gültige numerische Werte größer als 0 eingeben.</span
+                >
+              </div>
+              <!-- LIVE-KOSTENRECHNER (<100ms Reaktive Vorschau-Karte) -->
+              <div
+                class="bg-surface-container-high/70 border border-primary/30 rounded p-4 relative overflow-hidden transition-all duration-200"
+                id="live-calculator-card"
+              >
+                <!-- Subtle calculation speed indicator -->
+                <div
+                  class="flex items-center justify-between pb-3 border-b border-outline-variant/30"
+                >
+                  <span
+                    class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant font-medium"
+                    >Live-Kalkulation</span
+                  >
+                  <span
+                    class="text-label-sm font-label-sm text-primary font-mono flex items-center space-x-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="bolt"
+                      >bolt</span
+                    >
+                    <span>Berechnet in 12ms (Echtzeit)</span>
+                  </span>
+                </div>
+                <!-- Metric Computation Grid -->
+                <div class="grid grid-cols-2 gap-3 mt-3">
+                  <div
+                    class="bg-surface-container-lowest/60 rounded p-2.5 border border-outline-variant/20"
+                  >
+                    <span
+                      class="text-label-sm font-label-sm text-on-surface-variant block"
+                      >Spritverbrauch Gesamt</span
+                    >
+                    <div class="flex items-baseline space-x-1 mt-1">
+                      <span
+                        class="text-headline-md font-headline-md font-numeric-table text-on-surface"
+                        id="calc-fuel-used"
+                        >12.03</span
+                      >
+                      <span
+                        class="text-body-sm font-body-sm text-on-surface-variant"
+                        >Liter</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="bg-surface-container-lowest/60 rounded p-2.5 border border-outline-variant/20"
+                  >
+                    <span
+                      class="text-label-sm font-label-sm text-on-surface-variant block"
+                      >Gesamt-Fahrtkosten</span
+                    >
+                    <div class="flex items-baseline space-x-1 mt-1">
+                      <span
+                        class="text-headline-md font-headline-md font-numeric-table text-on-surface"
+                        id="calc-total-cost"
+                        >21.04</span
+                      >
+                      <span
+                        class="currency-symbol text-body-sm font-body-sm text-on-surface-variant"
+                        >€</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Split Result Highlight Badge -->
+                <div
+                  class="mt-3.5 bg-primary/10 border border-primary/40 rounded p-3 flex items-center justify-between"
+                >
+                  <div>
+                    <span
+                      class="text-label-sm font-label-sm text-primary font-semibold uppercase tracking-wider block"
+                      >Kostenanteil pro Mitfahrer</span
+                    >
+                    <div class="flex items-baseline space-x-1 mt-0.5">
+                      <span
+                        class="text-numeric-kpi font-numeric-kpi text-primary font-bold"
+                        id="calc-cost-per-person"
+                        >5.26</span
+                      >
+                      <span
+                        class="currency-symbol text-body-lg font-body-lg text-primary font-bold"
+                        >€</span
+                      >
+                      <span
+                        class="text-body-sm font-body-sm text-on-surface-variant pl-1"
+                        >/ Person</span
+                      >
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <span
+                      class="text-label-sm font-label-sm text-on-surface-variant block"
+                      >Basis:</span
+                    >
+                    <span
+                      class="text-label-md font-label-md text-on-surface font-semibold"
+                      id="calc-headcount-label"
+                      >4 Personen geteilt</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Form Actions -->
+              <div class="grid grid-cols-2 gap-3 pt-2">
+                <button
+                  class="px-4 py-2.5 rounded bg-surface-container hover:bg-surface-container-high border border-outline-variant/60 text-on-surface text-label-md font-label-md font-medium transition-colors"
+                  onclick="resetEntryForm()"
+                  type="button"
+                >
+                  Felder leeren
+                </button>
+                <button
+                  class="px-4 py-2.5 rounded bg-primary-container hover:bg-inverse-primary text-on-primary-container text-label-md font-label-md font-semibold flex items-center justify-center space-x-2 transition-all active:scale-[0.98]"
+                  type="submit"
+                >
+                  <span
+                    class="material-symbols-outlined text-lg"
+                    data-icon="save"
+                    >save</span
+                  >
+                  <span>Fahrt speichern</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- RIGHT COLUMN: Trip Log Ledger & Management Table (Remaining 7 Cols) -->
+        <div class="lg:col-span-7 space-y-5">
+          <!-- Table Control Strip: Search & Filter Chips -->
+          <div
+            class="bg-surface-container-low border border-outline-variant/40 rounded p-4"
+          >
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+            >
+              <!-- Search Bar -->
+              <div class="relative flex-1">
+                <input
+                  class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 pl-9 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary transition-colors"
+                  id="table-search"
+                  oninput="filterLedgerTable()"
+                  placeholder="Suche nach Mitfahrern, Notizen oder Datum..."
+                  type="text"
+                />
+                <span
+                  class="material-symbols-outlined absolute left-2.5 top-2.5 text-on-surface-variant text-lg"
+                  data-icon="search"
+                  >search</span
+                >
+              </div>
+              <!-- Filter Chips & Export -->
+              <div
+                class="flex items-center space-x-2 overflow-x-auto pb-1 sm:pb-0"
+              >
+                <button
+                  class="px-3 py-1.5 rounded bg-surface-container-high text-primary border border-outline-variant text-label-sm font-label-sm font-medium whitespace-nowrap"
+                >
+                  Alle (14)
+                </button>
+                <button
+                  class="px-3 py-1.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/40 text-label-sm font-label-sm whitespace-nowrap"
+                >
+                  Dieser Monat
+                </button>
+                <button
+                  class="px-3 py-1.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/40 text-label-sm font-label-sm whitespace-nowrap"
+                >
+                  Pendeln
+                </button>
+                <button
+                  class="p-1.5 rounded bg-surface-container hover:bg-surface-container-high border border-outline-variant/60 text-on-surface-variant hover:text-on-surface transition-colors"
+                  onclick="exportCSV()"
+                  title="CSV Exportieren"
+                >
+                  <span
+                    class="material-symbols-outlined text-lg align-middle"
+                    data-icon="download"
+                    >download</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Trips Ledger Data Table -->
+          <div
+            class="bg-surface-container-low border border-outline-variant/40 rounded overflow-hidden"
+          >
+            <div
+              class="px-4 py-3 border-b border-outline-variant/30 flex items-center justify-between"
+            >
+              <h3
+                class="text-label-md font-label-md font-semibold text-on-surface uppercase tracking-wider"
+              >
+                Erfasste Fahrten &amp; Aufteilung
+              </h3>
+              <span class="text-body-sm font-body-sm text-on-surface-variant"
+                >Live-Synchronisiert mit Cloud-Ledger</span
+              >
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse" id="trips-table">
+                <!-- Sticky Header -->
+                <thead>
+                  <tr
+                    class="border-b border-outline-variant/40 bg-surface-container-lowest/80 text-on-surface-variant text-label-sm font-label-sm uppercase tracking-wider"
+                  >
+                    <th class="py-3 px-3.5">Datum</th>
+                    <th class="py-3 px-3.5">Strecke &amp; Verbrauch</th>
+                    <th class="py-3 px-3.5 text-right">Spritpreis</th>
+                    <th class="py-3 px-3.5 text-right">Gesamt</th>
+                    <th class="py-3 px-3.5">Mitfahrer</th>
+                    <th class="py-3 px-3.5 text-right">Anteil p.P.</th>
+                    <th class="py-3 px-3.5 text-center">Aktionen</th>
+                  </tr>
+                </thead>
+                <!-- Table Rows -->
+                <tbody
+                  class="divide-y divide-outline-variant/20 text-body-md font-body-md"
+                  id="trips-tbody"
+                >
+                  <!-- Row 1 (Fahrt #104 - Subject of Edit Modal Preview) -->
+                  <tr
+                    class="hover:bg-surface-container/50 transition-colors group"
+                    id="row-104"
+                  >
+                    <td class="py-3.5 px-3.5 whitespace-nowrap">
+                      <span
+                        class="font-numeric-table font-semibold text-on-surface"
+                        >24.10.2024</span
+                      >
+                      <span
+                        class="block text-body-sm font-body-sm text-on-surface-variant"
+                        >#104 • München</span
+                      >
+                    </td>
+                    <td class="py-3.5 px-3.5 whitespace-nowrap">
+                      <span class="font-numeric-table text-on-surface"
+                        >240 km</span
+                      >
+                      <span
+                        class="text-body-sm font-body-sm text-on-surface-variant block"
+                        >6.8 l/100km • 16.3 L</span
+                      >
+                    </td>
+                    <td
+                      class="py-3.5 px-3.5 text-right font-numeric-table text-on-surface whitespace-nowrap"
+                    >
+                      1.74 <span class="currency-symbol">€</span>/l
+                    </td>
+                    <td
+                      class="py-3.5 px-3.5 text-right font-numeric-table font-semibold text-on-surface whitespace-nowrap"
+                    >
+                      <span class="row-total">28.39</span>
+                      <span class="currency-symbol">€</span>
+                    </td>
+                    <td class="py-3.5 px-3.5">
+                      <div class="flex items-center space-x-1">
+                        <span
+                          class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface"
+                          >Lukas</span
+                        >
+                        <span
+                          class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface"
+                          >Anna</span
+                        >
+                        <span
+                          class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface"
+                          >Michael</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-3.5 px-3.5 text-right whitespace-nowrap">
+                      <span
+                        class="inline-block px-2 py-0.5 rounded bg-primary/10 border border-primary/30 text-primary font-numeric-table font-semibold"
+                      >
+                        <span class="row-share">9.46</span>
+                        <span class="currency-symbol">€</span>
+                      </span>
+                    </td>
+                    <td class="py-3.5 px-3.5 text-center whitespace-nowrap">
+                      <div class="flex items-center justify-center space-x-1">
+                        <button
+                          class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors"
+                          onclick="
+                            openEditModal(
+                              104,
+                              '2024-10-24',
+                              240,
+                              6.8,
+                              1.74,
+                              3,
+                              'Lukas, Anna, Michael',
+                            )
+                          "
+                          title="Bearbeiten"
+                        >
+                          <span
+                            class="material-symbols-outlined text-lg"
+                            data-icon="edit"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors"
+                          onclick="triggerDeleteBanner(104)"
+                          title="Löschen"
+                        >
+                          <span
+                            class="material-symbols-outlined text-lg"
+                            data-icon="delete"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr
+                    class="hover:bg-surface-container/50 transition-colors group"
+                    id="row-103"
+                  >
+                    <td class="py-3.5 px-3.5 whitespace-nowrap">
+                      <span
+                        class="font-numeric-table font-semibold text-on-surface"
+                        >22.10.2024</span
+                      >
+                      <span
+                        class="block text-body-sm font-body-sm text-on-surface-variant"
+                        >#103 • Stuttgart</span
+                      >
+                    </td>
+                    <td class="py-3.5 px-3.5 whitespace-nowrap">
+                      <span class="font-numeric-table text-on-surface"
+                        >115 km</span
+                      >
+                      <span
+                        class="text-body-sm font-body-sm text-on-surface-variant block"
+                        >5.9 l/100km • 6.8 L</span
+                      >
+                    </td>
+                    <td
+                      class="py-3.5 px-3.5 text-right font-numeric-table text-on-surface whitespace-nowrap"
+                    >
+                      1.79 <span class="currency-symbol">€</span>/l
+                    </td>
+                    <td
+                      class="py-3.5 px-3.5 text-right font-numeric-table font-semibold text-on-surface whitespace-nowrap"
+                    >
+                      <span class="row-total">12.15</span>
+                      <span class="currency-symbol">€</span>
+                    </td>
+                    <td class="py-3.5 px-3.5">
+                      <div class="flex items-center space-x-1">
+                        <span
+                          class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface"
+                          >Sarah</span
+                        >
+                        <span
+                          class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface"
+                          >Stefan</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-3.5 px-3.5 text-right whitespace-nowrap">
+                      <span
+                        class="inline-block px-2 py-0.5 rounded bg-primary/10 border border-primary/30 text-primary font-numeric-table font-semibold"
+                      >
+                        <span class="row-share">4.05</span>
+                        <span class="currency-symbol">€</span>
+                      </span>
+                    </td>
+                    <td class="py-3.5 px-3.5 text-center whitespace-nowrap">
+                      <div class="flex items-center justify-center space-x-1">
+                        <button
+                          class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors"
+                          onclick="
+                            openEditModal(
+                              103,
+                              '2024-10-22',
+                              115,
+                              5.9,
+                              1.79,
+                              2,
+                              'Sarah, Stefan',
+                            )
+                          "
+                          title="Bearbeiten"
+                        >
+                          <span
+                            class="material-symbols-outlined text-lg"
+                            data-icon="edit"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors"
+                          onclick="triggerDeleteBanner(103)"
+                          title="Löschen"
+                        >
+                          <span
+                            class="material-symbols-outlined text-lg"
+                            data-icon="delete"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 3 (Fahrt #102) -->
+                  <tr
+                    class="hover:bg-surface-container/50 transition-colors group"
+                    id="row-102"
+                  >
+                    <td class="py-3.5 px-3.5 whitespace-nowrap">
+                      <span
+                        class="font-numeric-table font-semibold text-on-surface"
+                        >19.10.2024</span
+                      >
+                      <span
+                        class="block text-body-sm font-body-sm text-on-surface-variant"
+                        >#102 • Frankfurt</span
+                      >
+                    </td>
+                    <td class="py-3.5 px-3.5 whitespace-nowrap">
+                      <span class="font-numeric-table text-on-surface"
+                        >180 km</span
+                      >
+                      <span
+                        class="text-body-sm font-body-sm text-on-surface-variant block"
+                        >7.4 l/100km • 13.3 L</span
+                      >
+                    </td>
+                    <td
+                      class="py-3.5 px-3.5 text-right font-numeric-table text-on-surface whitespace-nowrap"
+                    >
+                      1.76 <span class="currency-symbol">€</span>/l
+                    </td>
+                    <td
+                      class="py-3.5 px-3.5 text-right font-numeric-table font-semibold text-on-surface whitespace-nowrap"
+                    >
+                      <span class="row-total">23.44</span>
+                      <span class="currency-symbol">€</span>
+                    </td>
+                    <td class="py-3.5 px-3.5">
+                      <div class="flex items-center space-x-1">
+                        <span
+                          class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface"
+                          >Jonas Berg</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-3.5 px-3.5 text-right whitespace-nowrap">
+                      <span
+                        class="inline-block px-2 py-0.5 rounded bg-primary/10 border border-primary/30 text-primary font-numeric-table font-semibold"
+                      >
+                        <span class="row-share">11.72</span>
+                        <span class="currency-symbol">€</span>
+                      </span>
+                    </td>
+                    <td class="py-3.5 px-3.5 text-center whitespace-nowrap">
+                      <div class="flex items-center justify-center space-x-1">
+                        <button
+                          class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors"
+                          onclick="
+                            openEditModal(
+                              102,
+                              '2024-10-19',
+                              180,
+                              7.4,
+                              1.76,
+                              1,
+                              'Jonas Berg',
+                            )
+                          "
+                          title="Bearbeiten"
+                        >
+                          <span
+                            class="material-symbols-outlined text-lg"
+                            data-icon="edit"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors"
+                          onclick="triggerDeleteBanner(102)"
+                          title="Löschen"
+                        >
+                          <span
+                            class="material-symbols-outlined text-lg"
+                            data-icon="delete"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr
+                    class="hover:bg-surface-container/50 transition-colors group"
+                    id="row-101"
+                  >
+                    <td class="py-3.5 px-3.5 whitespace-nowrap">
+                      <span
+                        class="font-numeric-table font-semibold text-on-surface"
+                        >15.10.2024</span
+                      >
+                      <span
+                        class="block text-body-sm font-body-sm text-on-surface-variant"
+                        >#101 • Nürnberg</span
+                      >
+                    </td>
+                    <td class="py-3.5 px-3.5 whitespace-nowrap">
+                      <span class="font-numeric-table text-on-surface"
+                        >92 km</span
+                      >
+                      <span
+                        class="text-body-sm font-body-sm text-on-surface-variant block"
+                        >6.2 l/100km • 5.7 L</span
+                      >
+                    </td>
+                    <td
+                      class="py-3.5 px-3.5 text-right font-numeric-table text-on-surface whitespace-nowrap"
+                    >
+                      1.72 <span class="currency-symbol">€</span>/l
+                    </td>
+                    <td
+                      class="py-3.5 px-3.5 text-right font-numeric-table font-semibold text-on-surface whitespace-nowrap"
+                    >
+                      <span class="row-total">9.81</span>
+                      <span class="currency-symbol">€</span>
+                    </td>
+                    <td class="py-3.5 px-3.5">
+                      <div class="flex items-center space-x-1">
+                        <span
+                          class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface"
+                          >Max M.</span
+                        >
+                        <span
+                          class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface"
+                          >Laura</span
+                        >
+                      </div>
+                    </td>
+                    <td class="py-3.5 px-3.5 text-right whitespace-nowrap">
+                      <span
+                        class="inline-block px-2 py-0.5 rounded bg-primary/10 border border-primary/30 text-primary font-numeric-table font-semibold"
+                      >
+                        <span class="row-share">3.27</span>
+                        <span class="currency-symbol">€</span>
+                      </span>
+                    </td>
+                    <td class="py-3.5 px-3.5 text-center whitespace-nowrap">
+                      <div class="flex items-center justify-center space-x-1">
+                        <button
+                          class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors"
+                          onclick="
+                            openEditModal(
+                              101,
+                              '2024-10-15',
+                              92,
+                              6.2,
+                              1.72,
+                              2,
+                              'Max M., Laura',
+                            )
+                          "
+                          title="Bearbeiten"
+                        >
+                          <span
+                            class="material-symbols-outlined text-lg"
+                            data-icon="edit"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors"
+                          onclick="triggerDeleteBanner(101)"
+                          title="Löschen"
+                        >
+                          <span
+                            class="material-symbols-outlined text-lg"
+                            data-icon="delete"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Table Footer Pagination / Quick Status -->
+            <div
+              class="px-4 py-3 bg-surface-container-lowest/50 border-t border-outline-variant/30 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant"
+            >
+              <span>Zeige 4 von 14 Einträgen</span>
+              <div class="flex items-center space-x-2">
+                <span class="text-label-sm font-label-sm"
+                  >Globale Währungsvariable: dynamically configured</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- MODAL / OVERLAY: Fahrt bearbeiten (Requirement 4 Implementation) -->
+    <div
+      class="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4"
+      id="edit-modal"
+    >
+      <div
+        class="bg-surface-container-low border border-outline-variant rounded-xl max-w-lg w-full p-6 shadow-2xl relative"
+      >
+        <!-- Modal Header -->
+        <div
+          class="flex items-center justify-between border-b border-outline-variant/40 pb-3 mb-4"
+        >
+          <div class="flex items-center space-x-2">
+            <span
+              class="material-symbols-outlined text-primary text-xl"
+              data-icon="edit_note"
+              >edit_note</span
+            >
+            <h3
+              class="text-headline-sm font-headline-sm text-on-surface font-semibold"
+            >
+              Fahrt bearbeiten
+              <span class="text-primary font-mono text-sm" id="modal-trip-id"
+                >#104</span
+              >
+            </h3>
+          </div>
+          <button
+            class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface"
+            onclick="closeEditModal()"
+          >
+            <span class="material-symbols-outlined text-xl" data-icon="close"
+              >close</span
+            >
+          </button>
+        </div>
+        <!-- Modal Form -->
+        <form
+          class="space-y-4"
+          id="modal-edit-form"
+          onsubmit="
+            event.preventDefault();
+            saveEditedTrip();
+          "
+        >
+          <div>
+            <label
+              class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+              >Datum</label
+            >
+            <input
+              class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 text-body-md font-body-md text-on-surface"
+              id="modal-date"
+              type="date"
+              value="2024-10-24"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label
+                class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+                >Strecke (km)</label
+              >
+              <input
+                class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 text-body-md font-body-md font-numeric-table text-on-surface"
+                id="modal-km"
+                step="0.1"
+                type="number"
+                value="240"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+                >Verbrauch (L/100km)</label
+              >
+              <input
+                class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 text-body-md font-body-md font-numeric-table text-on-surface"
+                id="modal-consumption"
+                step="0.1"
+                type="number"
+                value="6.8"
+              />
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label
+                class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+                >Spritpreis (€/L)</label
+              >
+              <input
+                class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 text-body-md font-body-md font-numeric-table text-on-surface"
+                id="modal-price"
+                step="0.01"
+                type="number"
+                value="1.74"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+                >Mitfahreranzahl</label
+              >
+              <input
+                class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 text-body-md font-body-md font-numeric-table text-on-surface"
+                id="modal-passengers"
+                min="1"
+                type="number"
+                value="3"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              class="block text-label-sm font-label-sm text-on-surface-variant mb-1 uppercase tracking-wider"
+              >Namen der Beteiligten</label
+            >
+            <input
+              class="w-full bg-surface-container border border-outline-variant/60 rounded px-3 py-2 text-body-md font-body-md text-on-surface"
+              id="modal-names"
+              type="text"
+              value="Lukas, Anna, Michael"
+            />
+          </div>
+          <!-- Modal Actions -->
+          <div
+            class="flex items-center justify-end space-x-3 pt-3 border-t border-outline-variant/30"
+          >
+            <button
+              class="px-4 py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface text-label-md font-label-md font-medium"
+              onclick="closeEditModal()"
+              type="button"
+            >
+              Abbrechen
+            </button>
+            <button
+              class="px-4 py-2 rounded bg-primary-container text-on-primary-container hover:bg-inverse-primary text-label-md font-label-md font-semibold flex items-center space-x-1.5"
+              type="submit"
+            >
+              <span
+                class="material-symbols-outlined text-base"
+                data-icon="check"
+                >check</span
+              >
+              <span>Änderungen speichern</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- INLINE VANILLA JAVASCRIPT: Full Mathematical Engine, Reactivity & Currency Sync -->
+    <script>
+      // State Variables
+      let currentCurrency = "EUR";
+      const currencyRates = {
+        EUR: { symbol: "€", rate: 1.0, unit: "€/L" },
+        CHF: { symbol: "Fr.", rate: 0.95, unit: "Fr./L" },
+        USD: { symbol: "$", rate: 1.08, unit: "$/gal" },
+        GBP: { symbol: "£", rate: 0.85, unit: "£/L" },
+      };
+
+      // Live Calculation Function (<100ms Execution)
+      function runLiveCalculation() {
+        const startTime = performance.now();
+
+        const km = parseFloat(document.getElementById("input-km").value) || 0;
+        const consumption =
+          parseFloat(document.getElementById("input-consumption").value) || 0;
+        const price =
+          parseFloat(document.getElementById("input-price").value) || 0;
+        let passengers =
+          parseInt(document.getElementById("input-passengers").value) || 1;
+        const includeDriver = document.getElementById(
+          "check-include-driver",
+        ).checked;
+
+        const errorBox = document.getElementById("form-error-msg");
+        const validationBox = document.getElementById("validation-box");
+
+        // Validation Gate
+        if (km <= 0 || consumption <= 0 || price <= 0 || passengers < 1) {
+          errorBox.classList.remove("hidden");
+          document.getElementById("calc-fuel-used").textContent = "0.00";
+          document.getElementById("calc-total-cost").textContent = "0.00";
+          document.getElementById("calc-cost-per-person").textContent = "0.00";
+          return;
+        } else {
+          errorBox.classList.add("hidden");
+        }
+
+        // Mathematical Execution
+        const fuelUsed = (km * consumption) / 100;
+        const totalCost = fuelUsed * price;
+
+        // Total division factor
+        const totalDivisors = includeDriver ? passengers + 1 : passengers;
+        const costPerPerson = totalCost / totalDivisors;
+
+        // Update Live Card
+        document.getElementById("calc-fuel-used").textContent =
+          fuelUsed.toFixed(2);
+        document.getElementById("calc-total-cost").textContent =
+          totalCost.toFixed(2);
+        document.getElementById("calc-cost-per-person").textContent =
+          costPerPerson.toFixed(2);
+        document.getElementById("calc-headcount-label").textContent =
+          `${totalDivisors} Personen geteilt`;
+
+        // Tactile Glow Highlight
+        const card = document.getElementById("live-calculator-card");
+        card.classList.add("ring-1", "ring-primary");
+        setTimeout(() => {
+          card.classList.remove("ring-1", "ring-primary");
+        }, 150);
+      }
+
+      // Passenger Stepper
+      function adjustPassengers(delta) {
+        const input = document.getElementById("input-passengers");
+        let val = (parseInt(input.value) || 1) + delta;
+        if (val >= 1 && val <= 10) {
+          input.value = val;
+          runLiveCalculation();
+        }
+      }
+
+      // Currency Switcher
+      function setCurrency(currencyKey) {
+        currentCurrency = currencyKey;
+        const curr = currencyRates[currencyKey];
+
+        // Update button active state
+        document.querySelectorAll(".curr-btn").forEach((btn) => {
+          btn.classList.remove(
+            "bg-surface-container-high",
+            "text-primary",
+            "border",
+            "border-outline-variant",
+            "font-medium",
+          );
+          btn.classList.add("text-on-surface-variant");
+        });
+
+        const activeBtn = document.getElementById("curr-" + currencyKey);
+        if (activeBtn) {
+          activeBtn.classList.add(
+            "bg-surface-container-high",
+            "text-primary",
+            "border",
+            "border-outline-variant",
+            "font-medium",
+          );
+          activeBtn.classList.remove("text-on-surface-variant");
+        }
+
+        // Update all currency symbols throughout document
+        document.querySelectorAll(".currency-symbol").forEach((el) => {
+          el.textContent = curr.symbol;
+        });
+
+        // Update Form Price Affix
+        const unitLabel = document.getElementById("price-unit-label");
+        if (unitLabel) {
+          unitLabel.textContent = curr.unit;
+        }
+
+        // Re-run live calculation with updated currency view
+        runLiveCalculation();
+      }
+
+      // Save Form Entry
+      function saveNewTrip() {
+        const km = document.getElementById("input-km").value;
+        const consumption = document.getElementById("input-consumption").value;
+        const price = document.getElementById("input-price").value;
+        const dateVal = document.getElementById("input-date").value;
+        const namesVal =
+          document.getElementById("input-passenger-names").value || "Mitfahrer";
+
+        if (!km || !consumption || !price) {
+          document.getElementById("form-error-msg").classList.remove("hidden");
+          return;
+        }
+
+        const totalCost =
+          document.getElementById("calc-total-cost").textContent;
+        const perPerson = document.getElementById(
+          "calc-cost-per-person",
+        ).textContent;
+        const curSymbol = currencyRates[currentCurrency].symbol;
+
+        const tbody = document.getElementById("trips-tbody");
+        const newId = Math.floor(Math.random() * 800) + 200;
+
+        const rowHtml = `
+        <tr id="row-${newId}" class="hover:bg-surface-container/50 transition-colors group">
+          <td class="py-3.5 px-3.5 whitespace-nowrap">
+            <span class="font-numeric-table font-semibold text-on-surface">${dateVal}</span>
+            <span class="block text-body-sm font-body-sm text-on-surface-variant">#${newId} • Neu erfasst</span>
+          </td>
+          <td class="py-3.5 px-3.5 whitespace-nowrap">
+            <span class="font-numeric-table text-on-surface">${km} km</span>
+            <span class="text-body-sm font-body-sm text-on-surface-variant block">${consumption} l/100km</span>
+          </td>
+          <td class="py-3.5 px-3.5 text-right font-numeric-table text-on-surface whitespace-nowrap">
+            ${price} ${curSymbol}/l
+          </td>
+          <td class="py-3.5 px-3.5 text-right font-numeric-table font-semibold text-on-surface whitespace-nowrap">
+            <span class="row-total">${totalCost}</span> ${curSymbol}
+          </td>
+          <td class="py-3.5 px-3.5">
+            <span class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-label-sm font-label-sm text-on-surface">${namesVal.split(",")[0]}</span>
+          </td>
+          <td class="py-3.5 px-3.5 text-right whitespace-nowrap">
+            <span class="inline-block px-2 py-0.5 rounded bg-primary/10 border border-primary/30 text-primary font-numeric-table font-semibold">
+              <span class="row-share">${perPerson}</span> ${curSymbol}
+            </span>
+          </td>
+          <td class="py-3.5 px-3.5 text-center whitespace-nowrap">
+            <div class="flex items-center justify-center space-x-1">
+              <button onclick="openEditModal(${newId}, '${dateVal}', ${km}, ${consumption}, ${price}, 3, '${namesVal}')" title="Bearbeiten" class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+              </button>
+              <button onclick="triggerDeleteBanner(${newId})" title="Löschen" class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `;
+
+        tbody.insertAdjacentHTML("afterbegin", rowHtml);
+        resetEntryForm();
+      }
+
+      // Reset Entry Form
+      function resetEntryForm() {
+        document.getElementById("input-km").value = "";
+        document.getElementById("input-consumption").value = "6.5";
+        document.getElementById("input-price").value = "1.75";
+        document.getElementById("input-passengers").value = "3";
+        document.getElementById("input-passenger-names").value = "";
+        document.getElementById("calc-fuel-used").textContent = "0.00";
+        document.getElementById("calc-total-cost").textContent = "0.00";
+        document.getElementById("calc-cost-per-person").textContent = "0.00";
+        document.getElementById("form-error-msg").classList.add("hidden");
+      }
+
+      // Focus Helper
+      function focusNewTripForm() {
+        document.getElementById("input-km").focus();
+      }
+
+      // Delete Modal / Banner Flow
+      let tripPendingDeletion = null;
+      function triggerDeleteBanner(tripId) {
+        tripPendingDeletion = tripId;
+        const banner = document.getElementById("delete-alert-banner");
+        banner.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function dismissDeleteBanner() {
+        document.getElementById("delete-alert-banner").classList.add("hidden");
+        tripPendingDeletion = null;
+      }
+
+      function confirmTripDeletion(tripId) {
+        const id = tripPendingDeletion || tripId;
+        const row = document.getElementById("row-" + id);
+        if (row) {
+          row.remove();
+        }
+        dismissDeleteBanner();
+      }
+
+      // Edit Modal Flow
+      function openEditModal(
+        tripId,
+        date,
+        km,
+        consumption,
+        price,
+        passengers,
+        names,
+      ) {
+        document.getElementById("modal-trip-id").textContent = "#" + tripId;
+        document.getElementById("modal-date").value = date;
+        document.getElementById("modal-km").value = km;
+        document.getElementById("modal-consumption").value = consumption;
+        document.getElementById("modal-price").value = price;
+        document.getElementById("modal-passengers").value = passengers;
+        document.getElementById("modal-names").value = names;
+        document.getElementById("edit-modal").classList.remove("hidden");
+      }
+
+      function closeEditModal() {
+        document.getElementById("edit-modal").classList.add("hidden");
+      }
+
+      function saveEditedTrip() {
+        // Mock save action
+        closeEditModal();
+        const notif = document.createElement("div");
+        notif.className =
+          "fixed bottom-5 right-5 bg-primary-container text-on-primary-container px-4 py-3 rounded shadow-lg text-label-md font-label-md flex items-center space-x-2 z-50";
+        notif.innerHTML =
+          '<span class="material-symbols-outlined text-lg">check_circle</span><span>Änderungen an Fahrt erfolgreich gespeichert!</span>';
+        document.body.appendChild(notif);
+        setTimeout(() => notif.remove(), 2500);
+      }
+
+      // Table Search Filter
+      function filterLedgerTable() {
+        const query = document
+          .getElementById("table-search")
+          .value.toLowerCase();
+        const rows = document.querySelectorAll("#trips-tbody tr");
+        rows.forEach((row) => {
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(query) ? "" : "none";
+        });
+      }
+
+      // Export CSV Mock
+      function exportCSV() {
+        alert(
+          "CSV Export wird generiert: 14 Fahrten im Format 'Datum, Strecke, Verbrauch, Spritpreis, Kosten, Mitfahrer' heruntergeladen.",
+        );
+      }
+
+      // Initialize Calculator on DOM load
+      document.addEventListener("DOMContentLoaded", () => {
+        runLiveCalculation();
+      });
+    </script>
+  </body>
+</html>
