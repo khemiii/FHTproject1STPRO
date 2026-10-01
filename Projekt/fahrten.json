@@ -1,0 +1,22 @@
+[
+  {
+    "id": 101,
+    "datum": "2026-10-01",
+    "fahrerId": 4,
+    "km": 100,
+    "verbrauch": 5.5,
+    "spritpreis": 2.21,
+    "mitfahrer": [
+      {
+        "personId": 1,
+        "anteil": 4.05,
+        "bezahlt": false
+      },
+      {
+        "personId": 3,
+        "anteil": 4.05,
+        "bezahlt": false
+      }
+    ]
+  }
+]
