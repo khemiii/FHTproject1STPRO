@@ -2,13 +2,9 @@
  * Gemeinsame Hilfsfunktionen für die Netlify Functions personen.js / fahrten.js.
  * Liegt bewusst in einem Unterordner (_shared), damit Netlify diese Datei
  * nicht selbst als eigene Function registriert.
- *
- * Ersetzt das Lesen/Schreiben von personen.json / fahrten.json aus server.js
- * durch Netlify Blobs (dauerhafter Key-Value-Speicher, von allen Aufrufen
- * und allen Nutzern gemeinsam genutzt).
  */
 
-const { getStore } = require("@netlify/blobs");
+const { getStore, connectLambda } = require("@netlify/blobs");
 
 const STORE_NAME = "fahrtentracker-data";
 
@@ -17,14 +13,13 @@ function getDataStore() {
 }
 
 async function handleDataFile(key, event) {
+  connectLambda(event); // nötig, damit Netlify Blobs im klassischen Function-Format funktioniert
+
   const store = getDataStore();
 
   if (event.httpMethod === "GET") {
     const data = await store.get(key, { type: "json" });
     if (data === null) {
-      // Entspricht dem bisherigen Verhalten von server.js: 404, solange
-      // noch nie gespeichert wurde. Das Frontend fängt das bereits ab und
-      // legt die Datei beim ersten Speichern automatisch an.
       return {
         statusCode: 404,
         headers: { "Content-Type": "application/json; charset=utf-8" },
