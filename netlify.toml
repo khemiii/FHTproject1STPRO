@@ -1,0 +1,19 @@
+[build]
+  base = "Projekt netlify"
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/"
+  to = "/spritshare.html"
+  status = 200
+
+[[redirects]]
+  from = "/api/personen"
+  to = "/.netlify/functions/personen"
+  status = 200
+
+[[redirects]]
+  from = "/api/fahrten"
+  to = "/.netlify/functions/fahrten"
+  status = 200
