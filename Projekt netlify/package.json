@@ -1,0 +1,12 @@
+{
+  "name": "spritshare",
+  "version": "1.0.0",
+  "description": "SpritShare - Spritkostentracker (Fahrtentracker Klassenprojekt)",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

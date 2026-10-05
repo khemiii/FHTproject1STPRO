@@ -1,0 +1,24 @@
+[build]
+  # Alles im Repo-Root wird als statische Seite ausgeliefert
+  publish = "."
+  functions = "netlify/functions"
+
+# Startseite: spritshare.html wird unter "/" ausgeliefert (Inhalt wird
+# direkt eingeblendet, die URL bleibt "/" - kein sichtbarer Redirect)
+[[redirects]]
+  from = "/"
+  to = "/spritshare.html"
+  status = 200
+
+# Die bestehenden API-Pfade aus spritshare.html / server.js werden 1:1
+# auf die Netlify Functions umgeleitet, damit am Frontend-Code nichts
+# geändert werden muss
+[[redirects]]
+  from = "/api/personen"
+  to = "/.netlify/functions/personen"
+  status = 200
+
+[[redirects]]
+  from = "/api/fahrten"
+  to = "/.netlify/functions/fahrten"
+  status = 200
