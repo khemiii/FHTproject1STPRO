@@ -18,5 +18,65 @@
         "bezahlt": false
       }
     ]
+  },
+  {
+    "id": 102,
+    "datum": "2026-10-14",
+    "fahrerId": 5,
+    "km": 200,
+    "verbrauch": 5,
+    "spritpreis": 2.5,
+    "mitfahrer": [
+      {
+        "personId": 1,
+        "anteil": 5,
+        "bezahlt": false
+      },
+      {
+        "personId": 3,
+        "anteil": 5,
+        "bezahlt": false
+      },
+      {
+        "personId": 4,
+        "anteil": 5,
+        "bezahlt": false
+      },
+      {
+        "personId": 6,
+        "anteil": 5,
+        "bezahlt": false
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "datum": "2026-10-14",
+    "fahrerId": 1,
+    "km": 100,
+    "verbrauch": 4,
+    "spritpreis": 2.4,
+    "mitfahrer": [
+      {
+        "personId": 3,
+        "anteil": 1.92,
+        "bezahlt": false
+      },
+      {
+        "personId": 4,
+        "anteil": 1.92,
+        "bezahlt": false
+      },
+      {
+        "personId": 5,
+        "anteil": 1.92,
+        "bezahlt": false
+      },
+      {
+        "personId": 6,
+        "anteil": 1.92,
+        "bezahlt": false
+      }
+    ]
   }
 ]
